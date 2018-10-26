@@ -85,3 +85,4 @@ const options = getOptions(process.argv);
 const openApiFile = readYamlFile(options.apiFilePath);
 const envFile = getEnv(readYamlFile(options.envFilePath), options.targetENV);
 console.log(_.mapValues(openApiFile, (x) => replaceEnv(x)));
+writeYamlFile(options.outputPath, openApiFile);
